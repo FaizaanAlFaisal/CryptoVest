@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+}
+
+/* basic colour palette of webpage as classes */
+.primaryColour {
+    background-color: #BB86FC;
+    border-color: #BB86FC;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+}
+
+.primaryVarColour {
+    background-color: #3700B3;
+    border-color: #3700B3;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.secondaryColour {
+    background-color: #03DAC6;
+    border-color: #03DAC6;
+    color: black;
+    font-weight: 500;
+
+}
+
+.primaryBackground {
+    background-color: #121212;
+    border-color: #121212;
+}
+
+.blackBackground {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.navbar-nav li:hover {
+    background: rgba(55, 0, 179, 0.2);
+    /* primary var colour low opacity */
+    transition: background 0.2s;
+    /* background-color: black;; */
+}
+
+.active {
+    /* for active link on navbar */
+    font-weight: 750;
+}
+
+
+/* email submit button effects on focus/hover */
+.buttonHover:active:focus,
+.buttonHover:focus,
+.buttonHover:active,
+.buttonHover:hover {
+    box-shadow: none;
+    outline: 0;
+    background-color: #3700B3;
+    border-color: #3700B3;
+    transition: background 0.2s;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+/* home page table styles */
+.decreaseTrend #trend {
+    color: rgba(255, 0, 0, 1);
+}
+
+.decreaseTrend #trend:hover {
+    color: rgba(255, 0, 0, 0.9);
+}
+
+.increaseTrend #trend {
+    color: rgba(0, 255, 0, 1);
+}
+
+.increaseTrend #trend:hover {
+    color: rgba(0, 255, 0, 0.9);
+}
+
+/* style for data-href attribute, allows whole row to be clickable */
+[data-href] {
+    cursor: pointer;
+}
+
+
+
+/* footer css */
+footer {
+    color: rgba(220, 220, 220, 1);
+}
+
+.footerLinks li a {
+    text-decoration: none;
+    color: rgba(220, 220, 220, 0.8);
+}
+
+.footerLinks li a:hover {
+    text-decoration: none;
+    color: rgba(220, 220, 220, 1);
+}
+
+/* social media icons in footer */
+.icons {
+    color: rgb(220, 220, 220);
+    text-decoration: none;
+}
+
+.icons:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+/* About page styles */
+.textContent {
+    color: rgba(220, 220, 220, 1);
+    font-size: large;
+}
+
+.groupMembers {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.groupMembers p {
+    font-size: medium;
+    font-weight: 400;
+}
+
+
+
+/*login page css*/
+#register-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+a {
+    color: #BB86FC;
+}
+
+a:hover {
+    transition: 0.3s;
+    color: #3700B3;
+}
+
+.btn:hover {
+    color: white;
+}
+
+#login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 700px;
+    height: 390px;
+    border: 5px solid #BB86FC;
+    border-radius: 35px;
+    color: #BB86FC;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+    color: #BB86FC;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+    margin-top: 0px;
+    color: #BB86FC;
+}
+
+
+
+
+
+/*tRADING PAGE css*/
+.container-fluid {
+    color: white;
+}
+
+.col-sm {
+    border: 1px solid black
+}
+
+.greencolor {
+    color: white;
+    background-color: #2bab3e;
+}
+
+.greencolor:hover {
+    background-color: green;
+}
+
+.redcolor {
+    color: white;
+    background-color: #d80c22;
+}
+
+.redcolor:hover {
+    background-color: darkred;
+}
+
+input {
+    height: 50px;
+}
+
+.t-btn {
+    width: 100%;
+    font-weight: 700;
+}
+
+#btcprice:focus {
+    background-color: #121212;
+    color: lightgray;
+}
+
+#ethprice:focus {
+    background-color: #121212;
+    color: lightgray;
+}
+
+#adaprice:focus {
+    background-color: #121212;
+    color: lightgray;
+}
+
+#btcamount:focus {
+    background-color: #121212;
+    color: lightgray;
+}
+
+#ethamount:focus {
+    background-color: #121212;
+    color: lightgray;
+}
+
+#adaamount:focus {
+    background-color: #121212;
+    color: lightgray;
+}
