@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+    include_once("./config.php");
 
+    //executing queries to retrieve static content
+    $head = $conn->query('SELECT content FROM static_content WHERE page="home" AND section="description"')->fetch_row()[0];
+    $tableHead = $conn->query('SELECT content FROM static_content WHERE page="home" AND section="tableHead"')->fetch_row()[0];
+    
+    $conn->close(); //closing connection
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +20,8 @@
     <script src="./bootstrap/jquery-3.6.0.min.js"></script>
     <!-- included bootstrap css and js minimized bundles + jquery -->
 
-    <script src="https://kit.fontawesome.com/d844771417.js" crossorigin="anonymous"></script>
-    <!-- social media icons library -->
-
     <link rel="stylesheet" href="./styles.css">
     <!-- personal stylesheet -->
-
 </head>
 
 <body class="primaryBackground">
@@ -36,7 +40,7 @@
             </div>
 
             <br>
-            <h1 class="display-2 text-light" style="font-weight: 600;">Buy and Sell <br>Cryptocurrencies!</h1>
+            <h1 class="display-2 text-light" style="font-weight: 600;"><?=$head; ?></h1>
 
 
             <br><br><br>
@@ -58,10 +62,10 @@
     <div class="content">
 
         <br><br><br>
-        <h2 class="display-6 text-light">Check the current Crypto-Market</h2>
+        <h2 class="display-6 text-light"><?=$tableHead; ?></h2>
 
         <br><br>
-        <table class="table table-hover table-dark text-center">
+        <table class="table table-hover table-dark text-center currencies">
             <thead>
                 <th>Currency</th>
                 <th>Last Price</th>
@@ -69,8 +73,38 @@
             </thead>
 
             <tbody>
-                <tr class="increaseTrend" data-href="#">
-                    <th scope="row">Bitcoin</td>
+
+                <script>
+                    (function tableUpdate() {
+                        $.ajax({
+                            type: "GET",
+                            url: "currencyUpdate.php",
+                            dataType: "html",
+                            success: function(response) {
+                                $('table.currencies tbody').html(response);
+                            },
+                            complete: function() { //call function after 5 seconds
+                                setTimeout(tableUpdate, 5000);
+                            } 
+                        });
+                    })();
+
+                    (function worker() {
+                        $.ajax({
+                            url: 'ajax/test.html', 
+                            success: function(data) {
+                            $('.result').html(data);
+                            },
+                            complete: function() {
+                            // Schedule the next request when the current one's complete
+                            setTimeout(worker, 5000);
+                            }
+                        });
+                        })();
+                </script>
+
+                <!-- <tr class="increaseTrend" data-href="#">
+                    <th scope="row ">Bitcoin</td>
                     <td>$42,517</td>
                     <td id="trend">+0.26%</td>
                 </tr>
@@ -85,42 +119,14 @@
                     <th scope="row">ADA</td>
                     <td>$421.5</td>
                     <td id="trend">-1.36%</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
         <br><br>
 
     </div>
 
-
-    <!-- page footer -->
-    <footer class="py-3 mt-5 blackBackground text-center" style="border-radius: 50px 50px 0 0;">
-        <ul class="nav pt-2 pb-3 my-3 mx-auto border-bottom justify-content-center col-6 row footerLinks">
-            <li class="nav-item col-4 col-md-3"><a href="./homepage.html">Home</a></li>
-            <li class="nav-item col-4 col-md-3"><a href="./trading.html">Trading</a></li>
-            <li class="nav-item col-4 col-md-3"><a href="./about.html">About</a></li>
-        </ul>
-
-        <!-- social media icons, facebook and twitter -->
-        <div class="border-bottom pb-3 mb-3 col-4 mx-auto">
-            <a href="#" class="icons">
-                <span class="fa-stack fa-1x fa-lg">
-                    <i class="fa-solid fa-circle fa-stack-2x" style="color: #3B5998;"></i>
-                    <i class="fa fa-facebook fa-stack-1x"></i>
-                </span>
-            </a>
-            <a href="#" class="icons">
-                <span class="fa-stack fa-1x fa-lg">
-                    <i class="fa-solid fa-circle fa-stack-2x" style="color: #1da1f2;"></i>
-                    <i class="fa fa-twitter fa-stack-1x"></i>
-                </span>
-            </a>
-        </div>
-
-        <p>
-            CryptoVest © 2022
-        </p>
-    </footer>
+    <?php include("./footer.php");?>
 
     <!-- jquery/js script -->
     <script>
@@ -130,6 +136,8 @@
             $('*[data-href]').on('click', function () {
                 window.location = $(this).data("href");
             });
+
+            // tableUpdate();
         });
     </script>
 

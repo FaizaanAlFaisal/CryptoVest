@@ -4,8 +4,20 @@
 
     include_once("./config.php"); //mysqli config
 
+    //executing queries to retrieve static content
+    $head = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="aboutHead"')->fetch_row()[0];
+    $missionHead = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="mission"')->fetch_row()[0];
+    $missionText = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="missionText"')->fetch_row()[0];
+    $teamHead = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamHead"')->fetch_row()[0];
+    $teamText = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamText"')->fetch_row()[0];
+    $teamMem1 = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamMem1"')->fetch_row()[0];
+    $teamMem2 = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamMem2"')->fetch_row()[0];
+    $teamMem3 = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamMem3"')->fetch_row()[0];
+    $teamCMS1 = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamCMS1"')->fetch_row()[0];
+    $teamCMS2 = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamCMS2"')->fetch_row()[0];
+    $teamCMS3 = $conn->query('SELECT content FROM static_content WHERE page="about" AND section="teamCMS3"')->fetch_row()[0];
     
-
+    $conn->close(); //closing sql connection
 ?>
 
 <html lang="en">
@@ -38,40 +50,29 @@
     <!-- main page content -->
     <div class="content my-5 textContent">
 
-        <h1 class="display-3 text-light mb-4">About CryptoVest</h1>
+        <h1 class="display-3 text-light mb-4"><?= $head; ?></h1>
 
         <br>
         <hr> <br><br>
-        <h1 class="display-6 text-light mb-4">Our Mission:</h1>
-        <p class="text-md-left">
-            CryptoVest is a platform and wallet for exchange of cryptocurrencies like Bitcoin, Etherium, Cordana, etc.
-            We strive to create a tool that is easy-to-use and provides all functionalities one could desire from such a
-            tool.
-            Our mission is to become a part of the infrastructure and integral services needed to thrive in the
-            blockchain
-            and cryptocurrencies environment.
-        </p>
+        <h1 class="display-6 text-light mb-4"><?= $missionHead; ?></h1>
+        <p class="text-md-left"><?= $missionText; ?></p>
 
         <br><br><br>
         <hr>
         <br><br><br>
-        <h1 class="display-6 text-light mb-4">The Team:</h1>
-        <p>
-            Our team comprises of 3 members. All of us are students in NUST (National University of Sciences &
-            Technology),
-            studying Computer Science in SEECS (School of Electrical Engineering & Computer Science).
-        </p>
+        <h1 class="display-6 text-light mb-4"><?= $teamHead; ?></h1>
+        <p><?= $teamText; ?></p>
 
         <br><br>
         <div class="groupMembers row text-center">
-            <div class="col-12 col-md-4">Ashir Raza <br>
-                <p>CMS ID: 337876</p>
+            <div class="col-12 col-md-4"><?= $teamMem1; ?><br>
+                <p><?= $teamCMS1; ?></p>
             </div>
-            <div class="col-12 col-md-4">Faizaan Al Faisal <br>
-                <p>CMS ID: 342626</p>
+            <div class="col-12 col-md-4"><?= $teamMem2; ?><br>
+                <p><?= $teamCMS2; ?></p>
             </div>
-            <div class="col-12 col-md-4">Umair Khalid Khan <br>
-                <p>CMS ID: 337959</p>
+            <div class="col-12 col-md-4"><?= $teamMem3; ?><br>
+                <p><?= $teamCMS3; ?></p>
             </div>
         </div>
         <br><br>
@@ -79,36 +80,7 @@
         <br><br>
     </div>
 
-
-    <!-- page footer -->
-    <footer class="py-3 mt-5 blackBackground text-center" style="border-radius: 50px 50px 0 0;">
-        <ul class="nav pt-2 pb-3 my-3 mx-auto border-bottom justify-content-center col-6 row footerLinks">
-            <li class="nav-item col-4 col-md-3"><a href="./homepage.html">Home</a></li>
-            <li class="nav-item col-4 col-md-3"><a href="./trading.html">Trading</a></li>
-            <li class="nav-item col-4 col-md-3"><a href="./about.html">About</a></li>
-        </ul>
-
-        <!-- social media icons, facebook and twitter -->
-        <div class="border-bottom pb-3 mb-3 col-4 mx-auto">
-            <a href="#" class="icons">
-                <span class="fa-stack fa-1x fa-lg">
-                    <i class="fa-solid fa-circle fa-stack-2x" style="color: #3B5998;"></i>
-                    <i class="fa fa-facebook fa-stack-1x"></i>
-                </span>
-            </a>
-            <a href="#" class="icons">
-                <span class="fa-stack fa-1x fa-lg">
-                    <i class="fa-solid fa-circle fa-stack-2x" style="color: #1da1f2;"></i>
-                    <i class="fa fa-twitter fa-stack-1x"></i>
-                </span>
-            </a>
-        </div>
-
-        <p>
-            CryptoVest © 2022
-        </p>
-    </footer>
+    <?php include("./footer.php");?>
 
 </body>
-
 </html>
