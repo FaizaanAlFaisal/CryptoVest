@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
+    session_start();
     include_once("./config.php");
 
     //executing queries to retrieve static content

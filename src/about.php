@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php session_start(); ?>
 <?php
 
     include_once("./config.php"); //mysqli config

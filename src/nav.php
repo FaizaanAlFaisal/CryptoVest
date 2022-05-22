@@ -21,13 +21,32 @@
             </li>
 
             <li class="nav-item px-2">
-                <a class="nav-link <?php echo ($_SERVER['PHP_SELF'] == "/src/about.php" ? "active" : "");?>" href="./about.php">About</a>
+                <a class="nav-link <?php echo ($_SERVER['PHP_SELF'] == "/src/wallet.php" ? "active" : "");?>" href="./wallet.php">Wallet</a>
             </li>
 
             <li class="nav-item px-2">
-                <a class="nav-link <?php echo ($_SERVER['PHP_SELF'] == "/src/login.php" ? "active" : "");?>" href="./login.php">Login</a>
+                <a class="nav-link <?php echo ($_SERVER['PHP_SELF'] == "/src/about.php" ? "active" : "");?>" href="./about.php">About</a>
             </li>
 
+        </ul>
+
+
+        <ul class="navbar-nav text-right mb-2 mb-lg-0 navItemHover py-2">
+            <?php
+                if(!isset($_SESSION['username'])) //if username is not set, display login | register
+                    echo    '<li class="nav-item px-2">
+                                <a class="nav-link' . ($_SERVER['PHP_SELF'] == "/src/login.php" ? "active" : "") . '" href="./login.php">Login</a>
+                            </li>
+                
+                            <li class="nav-item px-2 customLeftBorder">
+                                <a class="nav-link ' . ($_SERVER['PHP_SELF'] == "/src/register.php" ? "active" : "") . '" href="./register.php">Register</a>
+                            </li>';
+
+                else //otherwise display "logout"
+                    echo    '<li class="nav-item px-2">
+                                <a class="nav-link" href="./logout.php">Logout</a>
+                            </li>';
+            ?>
         </ul>
     </div>
 </div>

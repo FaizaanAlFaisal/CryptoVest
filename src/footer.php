@@ -2,11 +2,12 @@
 <!-- social media icons library -->
 
 <!-- page footer -->
-<footer class="py-3 mt-5 blackBackground text-center" style="border-radius: 50px 50px 0 0;">
-    <ul class="nav pt-2 pb-3 my-3 mx-auto border-bottom justify-content-center col-6 row footerLinks">
-        <li class="nav-item col-4 col-md-3"><a href="./homepage.html">Home</a></li>
-        <li class="nav-item col-4 col-md-3"><a href="./trading.html">Trading</a></li>
-        <li class="nav-item col-4 col-md-3"><a href="./about.html">About</a></li>
+<footer class="py-3 blackBackground text-center">
+    <ul class="nav pt-2 pb-3 my-3 mx-auto border-bottom justify-content-center col-10 col-md-6 row footerLinks">
+        <li class="nav-item col-3 col-md-3"><a href="./homepage.php">Home</a></li>
+        <li class="nav-item col-3 col-md-3"><a href="./trading.php">Trading</a></li>
+        <li class="nav-item col-3 col-md-3"><a href="./wallet.php">Wallet</a></li>
+        <li class="nav-item col-3 col-md-3"><a href="./about.php">About</a></li>
     </ul>
 
     <!-- social media icons, facebook and twitter -->
