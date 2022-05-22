@@ -75,7 +75,7 @@
             <tbody>
 
                 <script>
-                    (function tableUpdate() {
+                    (function tableUpdate() { //updates currency table every 5 seconds with information from database
                         $.ajax({
                             type: "GET",
                             url: "currencyUpdate.php",
@@ -88,38 +88,8 @@
                             } 
                         });
                     })();
-
-                    (function worker() {
-                        $.ajax({
-                            url: 'ajax/test.html', 
-                            success: function(data) {
-                            $('.result').html(data);
-                            },
-                            complete: function() {
-                            // Schedule the next request when the current one's complete
-                            setTimeout(worker, 5000);
-                            }
-                        });
-                        })();
                 </script>
 
-                <!-- <tr class="increaseTrend" data-href="#">
-                    <th scope="row ">Bitcoin</td>
-                    <td>$42,517</td>
-                    <td id="trend">+0.26%</td>
-                </tr>
-
-                <tr class="decreaseTrend" data-href="#">
-                    <th scope="row">Ethereum</td>
-                    <td>$3,234</td>
-                    <td id="trend">-0.05%</td>
-                </tr>
-
-                <tr class="decreaseTrend" data-href="#">
-                    <th scope="row">ADA</td>
-                    <td>$421.5</td>
-                    <td id="trend">-1.36%</td>
-                </tr> -->
             </tbody>
         </table>
         <br><br>
@@ -136,8 +106,6 @@
             $('*[data-href]').on('click', function () {
                 window.location = $(this).data("href");
             });
-
-            // tableUpdate();
         });
     </script>
 
