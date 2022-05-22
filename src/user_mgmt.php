@@ -1,7 +1,6 @@
 <?php 
     $username = "";
     $email = "";
-    $errors = array();
 
     include_once("./config.php");
 
