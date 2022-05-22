@@ -35,7 +35,7 @@
             <?php
                 if(!isset($_SESSION['username'])) //if username is not set, display login | register
                     echo    '<li class="nav-item px-2">
-                                <a class="nav-link' . ($_SERVER['PHP_SELF'] == "/src/login.php" ? "active" : "") . '" href="./login.php">Login</a>
+                                <a class="nav-link ' . ($_SERVER['PHP_SELF'] == "/src/login.php" ? "active" : "") . '" href="./login.php">Login</a>
                             </li>
                 
                             <li class="nav-item px-2 customLeftBorder">

@@ -48,9 +48,17 @@
             <!-- enter email + submit button -->
             <form class="row">
                 <div class="form-group col-sm-12 col-md-8 col-lg-6">
-                    <input class="form-control" type="email" placeholder="Enter email!" aria-label="submission">
-                    <button type="button" class="col-12 btn btn-primary btn-lg primaryColour buttonHover"
-                        style="margin: 10px 0;">Begin Trading!</button>
+                    <?php 
+                        if(!isset($_SESSION['username'])) 
+                            echo    '<a href="./login.php">
+                                    <button type="button" class="col-6 btn btn-primary btn-lg primaryColour buttonHover"
+                                        style="margin: 10px 0; height: 75px;">Begin Trading!</button>
+                                    </a>';
+                        else echo '<a href="./trading.php">
+                                        <button type="button" class="col-6 btn btn-primary btn-lg primaryColour buttonHover"
+                                        style="margin: 10px 0; height: 75px;">Begin Trading!</button>
+                                    </a>';
+                    ?>
                 </div>
             </form>
         </div>

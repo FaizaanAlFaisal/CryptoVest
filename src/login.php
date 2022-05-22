@@ -1,4 +1,6 @@
-<?php include("./user_mgmt.php"); ?>
+<?php include("./user_mgmt.php");
+    $check = $_GET['q'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +27,7 @@
 <body class="primaryBackground">
 
     <?php include("./nav.php"); ?> 
-
+    
 
     <div class="bg-image" style="background-image: url('./images/patterns-dark-grey-3648.jpg')">
 
@@ -69,7 +71,9 @@
     <br><br>
     </div>
     
-    <?php include("./footer.php");?>
+    <?php include("./footer.php");
+    if ($check == 'login') echo "<script>alert('You must login to use that feature!')</script>"    
+    ?>
 
 </body>
 
