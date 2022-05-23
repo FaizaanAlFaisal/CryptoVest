@@ -43,14 +43,20 @@
 
             <!-- <br> <hr style="color: white;"> -->
             <div class="col-6">
-                <div class="input-group input-group-lg">
-                    <h1 class="display-6 text-light" style="height: 50px;">Add More USD:</h1>
-                    <div class="input-group-append mx-4">
-                        <a href="./wallet.php">
-                            <button type="button" class="btn btn-primary primaryColour buttonHover display-6" style="height: 50px;">Go to Wallet</button>
-                        </a>
+                <!-- <div class="input-group input-group-lg"> -->
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <h1 class="display-6 text-light" style="height: 50px;">Add More USD:</h1>
+                        </div>
+                        <!-- <div class="input-group-append mx-4"> -->
+                        <div class="col-12 col-md-6">
+                            <a href="./wallet.php">
+                                <button type="button" class="btn btn-primary primaryColour buttonHover display-6" style="height: 50px;">Go to Wallet</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                    <!-- </div> -->
+                <!-- </div> -->
             </div>
             <br> <br> <br> <br>
             <hr style="color: white;">

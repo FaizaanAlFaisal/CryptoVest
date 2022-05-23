@@ -51,11 +51,11 @@
                     <?php 
                         if(!isset($_SESSION['username'])) 
                             echo    '<a href="./login.php">
-                                    <button type="button" class="col-6 btn btn-primary btn-lg primaryColour buttonHover"
+                                    <button type="button" class="col-12 col-md-8 btn btn-primary btn-lg primaryColour buttonHover"
                                         style="margin: 10px 0; height: 75px;">Begin Trading!</button>
                                     </a>';
                         else echo '<a href="./trading.php">
-                                        <button type="button" class="col-6 btn btn-primary btn-lg primaryColour buttonHover"
+                                        <button type="button" class="col-12 col-md-8 btn btn-primary btn-lg primaryColour buttonHover"
                                         style="margin: 10px 0; height: 75px;">Begin Trading!</button>
                                     </a>';
                     ?>

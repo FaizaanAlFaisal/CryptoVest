@@ -81,12 +81,12 @@
         <h1 class="display-5 text-light">Add US Dollars to Account:</h1>
         <form method="post" action="./wallet.php">
             <div class="row my-4">
-                <div class="col-4">
+                <div class="col-12 col-md-6">
                     <input class="form-control" type="number" id="addValue" name="addValue" min="0" required>
                 </div>
             </div>
             <div class="row my-4">
-                <div class="col-4 text-center">
+                <div class="col-12 col-md-6 text-center">
                     <button type="submit" class="btn btn-primary btn-lg primaryColour buttonHover" id="addUSD" name="addUSD" style="width:100%">Add</button>
                 </div>
             </div>

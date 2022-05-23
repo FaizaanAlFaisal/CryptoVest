@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background: rgb(187, 134, 252); font-weight: 500;">
 
 <div class="container-fluid px-5">
-    <a class="navbar-brand logo" href="./homepage.html">CryptoVest</a>
+    <a class="navbar-brand logo" href="./homepage.php" style="font-size:22px" >CryptoVest</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation"
         aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navigation">
+    <div class="collapse navbar-collapse" style="font-size:22px" id="navigation">
 
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navItemHover py-2">
 
